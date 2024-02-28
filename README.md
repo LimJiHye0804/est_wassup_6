@@ -2,7 +2,7 @@
 
 ## Introduction
 Welcome to our project!😄<br/>
-이 프로젝트는 감정 분류 및 객체 인식을 위해 컴퓨터 비전 모델, 특히 **ViT** 및 **ResNet** 의 성능을 활용하는 데 중점을 두었습니다. 또한 저희는 **detection** 및 **segmentation** 작업을 프레임워크에 통합하여 기능을 확장했습니다.
+이 프로젝트는 감정 분류 및 객체 인식을 위해 컴퓨터 비전 모델, 특히 **ViT** 및 **ResNet** 의 성능을 활용하는 데 중점을 두었습니다. 또한 저희는 **Detection** 및 **Segmentation**, **Agumentation** 작업을 프레임워크에 통합하여 기능을 확장했습니다.
 <br/><br/><br/>
 
 ## 개발 환경
@@ -47,10 +47,11 @@ on-device ai 기술이 발전하며 이젠 가볍게 모바일 기기에서 ai�
 <br/><br/>
 
 ### Key Features
-- **감정 분류(ViT/ResNet)**: ViT와 ResNet을 활용한 우리 프로젝트는 이미지에 묘사된 감정을 정확하게 분류하는 데 탁월합니다. ResNet 아키텍처는 깊이와 효율성을 제공하여 다양한 감정을 정확하게 인식할 수 있습니다.
+- **감정 분류(ViT/ResNet)**: ViT와 ResNet을 활용한 우리 프로젝트는 이미지에 묘사된 감정을 정확하게 분류하는 데 탁월합니다. 특히 ResNet 아키텍처는 깊이와 효율성을 제공하여 다양한 감정을 정확하게 인식할 수 있습니다.<br/>
 - **Additional Tasks(etc)**:
     - **Detection**: 이미지 내에서 안면 인식을 하여 위치를 파악할 수 있도록 개체 탐지 기능을 통합하였습니다.
     - **Segmentation**: 이미지 내의 객체 경계를 구분한 분할 작업을 포함하였습니다.
+    - **Agumentation**: 데이터 증강은 안면 부분을 크롭하거나 얼굴 방향(face pose)을 어규멘테이션하는 방식으로 진행하였습니다. 안면 부분 크롭을 통해 데이터의 다양성을 확보하고, face pose agumentation을 통해 모델이 다양한 얼굴 방향에 대응할 수 있도록 시도하였습니다.
 <br/>
 
 ## Dataset
@@ -142,12 +143,43 @@ python main.py --m VitDetection
 ~~~
 <br/>
 
-Visualization Web Service를 구현하기 위해 [Streamlit](https://docs.streamlit.io/) API를 활용하였습니다. 다음과 같은 명령어를 사용하여 Web Service를 실행해보세요.
+Lyric crawling & Emotion classification 기능을 수행하는 Visualization Web Service를 구현하기 위해 [Streamlit](https://docs.streamlit.io/) API를 활용하였습니다.<br/>
+다음과 같은 명령어를 사용하여 Web Service를 실행해보세요.
 <br/>
 ✅ run `streamlit web` with
 ~~~sh
 streamlit run app.py
 ~~~
+<br/><br/>
+
+## Web Demonstration Flow
+1. 셀카 이미지 업로드
+<img width="378" alt="streamlit_01" src="https://github.com/asummerz/est_wassup_6/assets/52696838/77a19b00-e7ca-49cf-a087-d62edb3bb5c4">
+<br/><br/>
+
+3. 오늘 일기 간단히 작성 > 노래 추천 > 추천 노래 듣기
+<img width="375" alt="streamlit_02" src="https://github.com/asummerz/est_wassup_6/assets/52696838/c071d32d-586c-40a7-a34d-a706199a8872">
+<br/><br/>
+
+4. Chrome browser를 통해 멜론 해당 음악 상세페이지에서 음악 듣기
+<img width="432" alt="streamlit_03" src="https://github.com/asummerz/est_wassup_6/assets/52696838/51de967f-271b-4c1e-a2d8-4e25800402a5">
+<br/><br/><br/>
+
+## etc
+**Detection**
+<img width="1106" alt="Detection" src="https://github.com/asummerz/est_wassup_6/assets/52696838/1a011551-311c-452a-ab3a-4ef283699a3e">
+<br/><br/>
+
+**Face Crop**
+<img width="1070" alt="face_crop" src="https://github.com/asummerz/est_wassup_6/assets/52696838/ec478710-c8d3-454b-8dd4-37393121dd0f">
+<br/><br/>
+
+**Face Pose Agumentation**
+<img width="1014" alt="face_pose_agumentation" src="https://github.com/asummerz/est_wassup_6/assets/52696838/46d4715e-1aac-41e9-a2f8-fedbc6598a02">
+<br/><br/>
+
+**Segmentation**
+<img width="1133" alt="segmentation" src="https://github.com/asummerz/est_wassup_6/assets/52696838/3e89c421-58be-4865-be27-69acec52c339">
 <br/><br/><br/>
 
 ## App Sketch(비즈니스 실무 활용성)
