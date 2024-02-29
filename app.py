@@ -41,7 +41,7 @@ if uploaded_file is not None:
     face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
     faces = face_classifier.detectMultiScale(
-    gray_image, scaleFactor=1.1, minNeighbors=1, minSize=(40, 40)
+        gray_image, scaleFactor=1.1, minNeighbors=1, minSize=(40, 40)
     )
 
     if len(faces) > 0:
@@ -84,13 +84,16 @@ if uploaded_file is not None:
         # Convert the NumPy array back to PIL Image for Streamlit
         final_image = Image.fromarray(image_with_boxes)
         st.image(final_image, caption='Uploaded Image with Detected Face', use_column_width=True)
-    dict2 = {3:'기쁨:heart_eyes:이',
-            4:'상처:pensive:',
-            0:'분노:rage:',
-            2:'당황:frowning:이',
-            1:'불안:worried:이',
-            6:'중립:neutral_face:이',
-            5:'슬픔:cry:이'}
+      
+    dict2 = {
+        3:'기쁨:heart_eyes:이',
+        4:'상처:pensive:',
+        0:'분노:rage:',
+        2:'당황:frowning:이',
+        1:'불안:worried:이',
+        6:'중립:neutral_face:이',
+        5:'슬픔:cry:이'
+    }
     
     input_dict = {
         0: ['긍정적인 생각으로 분노를 가라앉혀보세요🫠', '분노 Stop!', '내일은 오늘보다 훨씬 나아질거예요~'],
