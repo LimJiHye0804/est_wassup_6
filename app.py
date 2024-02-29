@@ -8,8 +8,7 @@ import datetime as dt
 import random as rd
 from modulize.model import *
 from modulize.crawl import *
-from segmentation import *
-  # Make sure this imports your model correctly
+# from etc.segmentation import *
 
 # Load your model and set it to evaluation mode
 model = torch.load("vitdetection2.pth", map_location=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
