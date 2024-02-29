@@ -1,0 +1,4 @@
+batch_size,epoch,scheduler,optimizer,lr,trn set per class,tst set per class,Train Loss,Val Loss,ACC,Precision,MSE,R2,loss
+32,10,FALSE,Adam,0.00005,3000,1000,3.0368,5.1322,0.5196,0.535,5661.6045,-1.1358,iou
+32,10,FALSE,Adam,0.0001,3000,300,3.2095,5.1078,0.5076,0.5266,4952.21,-0.858,iou
+64,10,FALSE,Adam,0.00005,3000,1000,134.3732,135.5084,0.1411,0.0396,2659.4604,-0.0052,l1
